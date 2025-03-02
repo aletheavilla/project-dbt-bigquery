@@ -21,3 +21,10 @@ dependencies = [
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.sqlfluff.core]
+dialect = "bigquery"
+sql_file_exts = ".sql,.sql.j2,.dml,.ddl"
+
+[tool.sqlfluff.rules]
+exclude_rules = "LT01,LT02,AL01"
