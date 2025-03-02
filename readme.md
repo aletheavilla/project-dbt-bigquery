@@ -27,8 +27,8 @@ After consultations with both teams, you identified the following.
 
 
 ## Operations
-- Wants to know what products they should store more of in each distribution center.
-- How much of each product should they produce?
+- Wants to know if they're keeping up with their orders.
+- Which warehouses should they expand the capacity of?
 
 
 # Caveats & Observations
