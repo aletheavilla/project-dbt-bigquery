@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_fulfilled_orders
+    columns:
+      - name: order_group_id
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        tests:
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+  - name: stg_ops_big_table
+    columns:
+      - name: order_month
+        tests:
+          - not_null
+      - name: order_id
+        tests:
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['Cancelled', 'Complete' ,'Shipped' , 'Processing' , 'Returned']
+      - name: wh_id
+        tests:
+          - not_null
+      - name: center_name
+        tests:
+          - not_null
