@@ -1,0 +1,40 @@
+
+name: 'project_dbt_bigquery'
+version: '1.0.0'
+
+profile: 'project_dbt_bigquery'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets: 
+  - "target"
+  - "dbt_packages"
+
+models:
+  project_dbt_bigquery:
+    sales:
+      report_mom_market:
+        +materialized: table
+        +schema: sales
+      stg_combined_tables:
+        +materialized: view
+        +schema: sales
+      stg_fulfilled_orders:
+        +materialized: view
+        +schema: sales
+    operations:
+      report_fulfilled_orders:
+        +materialized: table
+        +schema: ops
+      report_days_in_inventory:
+        +materialized: table
+        +schema: ops
+      stg_ops_big_table: 
+        +materialized: view
+        +schema: ops
+

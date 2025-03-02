@@ -29,3 +29,10 @@ After consultations with both teams, you identified the following.
 ## Operations
 - Wants to know what products they should store more of in each distribution center.
 - How much of each product should they produce?
+
+
+# Caveats & Observations
+- The prescribed retail_price is always equal to the sale price
+- The location of the user is the delivery location
+- All Timestamps are in UTC
+- Not all items in the `inventory_items` table can be found in the `order_items` table.
