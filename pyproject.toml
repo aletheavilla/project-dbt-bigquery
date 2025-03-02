@@ -13,10 +13,18 @@ dependencies = [
     "google-cloud-bigquery (>=3.30.0,<4.0.0)",
     "pandas (>=2.2.3,<3.0.0)",
     "python-dotenv (>=1.0.1,<2.0.0)",
-    "black (>=25.1.0,<26.0.0)"
+    "black (>=25.1.0,<26.0.0)",
+    "sqlfluff (>=3.3.1,<4.0.0)"
 ]
 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.sqlfluff.core]
+dialect = "bigquery"
+sql_file_exts = ".sql,.sql.j2,.dml,.ddl"
+
+[tool.sqlfluff.rules]
+exclude_rules = "LT01,LT02,AL01"
